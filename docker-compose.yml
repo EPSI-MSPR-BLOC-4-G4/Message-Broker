@@ -15,8 +15,8 @@ services:
     hostname: kafka-gen
     container_name: kafka-gen
     volumes:
-      - ./scripts/create_cluster_id.sh:/tmp/create_cluster_id.sh
-      - ./clusterID:/tmp/clusterID
+      - /data/compose/8/scripts/create_cluster_id.sh:/tmp/create_cluster_id.sh
+      - /data/compose/8/clusterID:/tmp/clusterID
     command: "bash -c '/tmp/create_cluster_id.sh'"
 
   kafka1:
@@ -41,8 +41,8 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
       - kafka1-data:/var/lib/kafka/data
-      - ./scripts/update_run.sh:/tmp/update_run.sh
-      - ./clusterID:/tmp/clusterID
+      - /data/compose/8/scripts/update_run.sh:/tmp/update_run.sh
+      - /data/compose/8/clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
 
   kafka2:
@@ -67,8 +67,8 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
       - kafka2-data:/var/lib/kafka/data
-      - ./scripts/update_run.sh:/tmp/update_run.sh
-      - ./clusterID:/tmp/clusterID
+      - /data/compose/8/scripts/update_run.sh:/tmp/update_run.sh
+      - /data/compose/8/clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
 
   kafka3:
@@ -93,8 +93,8 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
       - kafka3-data:/var/lib/kafka/data
-      - ./scripts/update_run.sh:/tmp/update_run.sh
-      - ./clusterID:/tmp/clusterID
+      - /data/compose/8/scripts/update_run.sh:/tmp/update_run.sh
+      - /data/compose/8/clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
 volumes:
   kafka1-data:
