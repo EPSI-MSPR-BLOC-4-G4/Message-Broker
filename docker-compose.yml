@@ -39,6 +39,7 @@ services:
       KAFKA_METADATA_MAX_RETENTION_MS: 1200000
       KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 2800
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
     volumes:
       - kafka1-data:/var/lib/kafka/data
       - /data/compose/8/scripts/update_run.sh:/tmp/update_run.sh
@@ -65,6 +66,7 @@ services:
       KAFKA_METADATA_MAX_RETENTION_MS: 1200000
       KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 2800
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
     volumes:
       - kafka2-data:/var/lib/kafka/data
       - /data/compose/8/scripts/update_run.sh:/tmp/update_run.sh
@@ -91,6 +93,7 @@ services:
       KAFKA_METADATA_MAX_RETENTION_MS: 1200000
       KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 2800
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
     volumes:
       - kafka3-data:/var/lib/kafka/data
       - /data/compose/8/scripts/update_run.sh:/tmp/update_run.sh
