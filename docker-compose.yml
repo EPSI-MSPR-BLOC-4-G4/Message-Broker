@@ -25,6 +25,7 @@ services:
     container_name: kafka1
     ports:
       - "39092:39092"
+      - "38092:38092"
     environment:
       KAFKA_LISTENERS: BROKER://kafka1:19092,EXTERNAL://kafka1:39092,LAN://0.0.0.0:38092,CONTROLLER://kafka1:9093
       KAFKA_ADVERTISED_LISTENERS: BROKER://kafka1:19092,EXTERNAL://82.66.231.166:39092,LAN://192.168.1.131:38092
@@ -52,6 +53,7 @@ services:
     container_name: kafka2
     ports:
       - "39093:39093"
+      - "38093:38093"
     environment:
       KAFKA_LISTENERS: BROKER://kafka2:19093,EXTERNAL://kafka2:39093,CONTROLLER://kafka2:9093,LAN://0.0.0.0:38093
       KAFKA_ADVERTISED_LISTENERS: BROKER://kafka2:19093,EXTERNAL://82.66.231.166:39093,LAN://192.168.1.131:38093
@@ -79,6 +81,7 @@ services:
     container_name: kafka3
     ports:
       - "39094:39094"
+      - "38094:38094"
     environment:
       KAFKA_LISTENERS: BROKER://kafka3:19094,EXTERNAL://kafka3:39094,CONTROLLER://kafka3:9093,LAN://0.0.0.0:38094
       KAFKA_ADVERTISED_LISTENERS: BROKER://kafka3:19094,EXTERNAL://82.66.231.166:39094,LAN://192.168.1.131:38094
